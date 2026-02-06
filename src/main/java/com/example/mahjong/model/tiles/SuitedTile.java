@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 
 @Entity
 @DiscriminatorValue("Normal")
-public class NormalTile extends Tile  {
+public class SuitedTile extends Tile  {
     String suit;
     int number;
 }
