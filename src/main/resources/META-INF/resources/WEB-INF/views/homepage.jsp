@@ -10,9 +10,10 @@
 <h1>Welcome</h1>
 <hr>
 <div class="navBar">
-    <div class="courseNav ${activePage == 'coursesDashboard' ? 'active' : ''}">
-        <h2>Courses</h2>
-    </div>
+    <ul>
+        <li>New Game</li>
+        <li>Account</li>
+    </ul>
 </div>
 </body>
 </html>

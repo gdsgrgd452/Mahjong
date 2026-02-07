@@ -5,8 +5,18 @@ import jakarta.persistence.Entity;
 
 
 @Entity
-@DiscriminatorValue("Normal")
+@DiscriminatorValue("Suited")
 public class SuitedTile extends Tile  {
-    String suit;
-    int number;
+    Integer number;
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+
+
 }

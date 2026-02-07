@@ -6,5 +6,5 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("Honor")
 public class HonorTile extends Tile  {
-    String type;
+
 }

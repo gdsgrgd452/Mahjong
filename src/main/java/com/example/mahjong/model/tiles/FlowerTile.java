@@ -7,5 +7,13 @@ import jakarta.persistence.Entity;
 @Entity
 @DiscriminatorValue("Flower")
 public class FlowerTile extends Tile  {
-    int flowerNumber;
+    Integer number;
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
 }
