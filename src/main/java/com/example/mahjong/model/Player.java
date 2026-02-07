@@ -1,24 +1,34 @@
 package com.example.mahjong.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.mahjong.model.tiles.Tile;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class User {
+public class Player {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //Auto generates the ID
-    private int userId;
+    int playerId;
     private String username;
     private String password;
     private String role;
+    @OneToMany(mappedBy = "player", cascade = CascadeType.ALL) //Links the game to the tiles it has
+    private List<Tile> currentHand = new ArrayList<>();
+    @OneToOne
+    private Game game;
 
-    public int getUserId() {
-        return userId;
+    public void addTile(Tile tile) {
+        this.currentHand.add(tile);
+        tile.setUser(this);
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public int getPlayerId() {
+        return playerId;
+    }
+
+    public void setPlayerId(int userId) {
+        this.playerId = userId;
     }
 
     public String getUsername() {
