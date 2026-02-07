@@ -15,5 +15,6 @@
         <li>Account</li>
     </ul>
 </div>
+<p><a href="${pageContext.request.contextPath}/tilesDisplay">View tiles</a></p>
 </body>
 </html>

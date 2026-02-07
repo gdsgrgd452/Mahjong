@@ -1,0 +1,54 @@
+:root {
+    --board-bg: #26734d;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    overflow: hidden; /* Prevents scrollbars */
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.mahjong-board {
+    display: grid;
+    /* 18 columns, 8 rows */
+    grid-template-columns: repeat(18, minmax(0, 1fr));
+    grid-template-rows: repeat(8, minmax(0, 1fr));
+    width: 95vw;
+    height: 90vh;
+    gap: 4px;
+    padding: 15px;
+    background-color: var(--board-bg);
+    border: 8px solid #3d2b1f;
+    border-radius: 8px;
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5);
+}
+
+/* The invisible container for the player's hand */
+.player-hand {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 15px;
+    /* Invisible: No background or border */
+    min-height: 100px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}

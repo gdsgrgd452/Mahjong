@@ -1,0 +1,26 @@
+:root {
+    --tile-bg: #fdfdfd;
+    --tile-shadow: #222222;
+}
+
+.tile {
+    background: var(--tile-bg);
+    border-radius: 3px;
+    border-bottom: 3px solid var(--tile-shadow);
+    border-right: 2px solid var(--tile-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: min(1.5vw, 2vh);
+    cursor: pointer;
+    transition: transform 0.1s;
+    user-select: none; /* Stops the user from selecting the text */
+    color: #333;
+    overflow: hidden; /* Prevents text from breaking layout */
+}
+
+.tile:hover {
+    transform: scale(1.1); /* Enlarges on hover */
+    z-index: 10;
+}
