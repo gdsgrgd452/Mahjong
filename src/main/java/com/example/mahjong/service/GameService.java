@@ -1,6 +1,7 @@
 package com.example.mahjong.service;
 
 import com.example.mahjong.exception.GameCreationFailedException;
+import com.example.mahjong.exception.GetFromDatabaseFailedException;
 import com.example.mahjong.model.Game;
 import com.example.mahjong.model.tiles.Tile;
 import com.example.mahjong.repository.GameRepository;
@@ -28,7 +29,7 @@ public class GameService {
             game.addTile(tile);
             gameRepository.save(game);
         } catch (Exception e) {
-            throw new GameCreationFailedException("Failed to add a new tile");
+            throw new GameCreationFailedException("Failed to add a new tile"); //Update exception
         }
     }
 
@@ -36,7 +37,7 @@ public class GameService {
         try {
             return gameRepository.findFirstByGameId(1);
         } catch (Exception e) {
-            throw new GameCreationFailedException("Failed to add a new tile");
+            throw new GetFromDatabaseFailedException("Failed to add a new tile");
         }
     }
 

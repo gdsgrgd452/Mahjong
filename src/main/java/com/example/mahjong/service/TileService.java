@@ -1,6 +1,8 @@
 package com.example.mahjong.service;
 
 import com.example.mahjong.exception.GameCreationFailedException;
+import com.example.mahjong.exception.GetFromDatabaseFailedException;
+import com.example.mahjong.exception.TileCreationFailedException;
 import com.example.mahjong.model.Game;
 import com.example.mahjong.model.tiles.*;
 import com.example.mahjong.repository.TileRepository;
@@ -42,14 +44,14 @@ public class TileService {
                     break;
 
                 default:
-                    throw new IllegalArgumentException("Unknown tile type: " + type);
+                    throw new TileCreationFailedException("Unknown tile type: " + type);
             }
             tile.setGame(game);
             tileRepository.save(tile);
             return tile;
 
         } catch (Exception e) {
-            throw new GameCreationFailedException("Failed to create tile of type: " + type, e);
+            throw new TileCreationFailedException("Failed to create tile of type: " + type, e);
         }
     }
 
@@ -57,7 +59,7 @@ public class TileService {
         try {
             return tileRepository.getAllByGame(game);
         } catch (Exception e) {
-            throw new GameCreationFailedException("Failed to get all tiles from game id: ", e);
+            throw new GetFromDatabaseFailedException("Failed to get all tiles from game id: ", e);
             //Add new exception here
         }
     }
