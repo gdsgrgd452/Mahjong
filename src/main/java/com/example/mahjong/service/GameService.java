@@ -3,6 +3,7 @@ package com.example.mahjong.service;
 import com.example.mahjong.exception.GameCreationFailedException;
 import com.example.mahjong.exception.GetFromDatabaseFailedException;
 import com.example.mahjong.model.Game;
+import com.example.mahjong.model.Player;
 import com.example.mahjong.model.tiles.Tile;
 import com.example.mahjong.repository.GameRepository;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,16 @@ public class GameService {
             game.addTile(tile);
             gameRepository.save(game);
         } catch (Exception e) {
-            throw new GameCreationFailedException("Failed to add a new tile"); //Update exception
+            throw new GameCreationFailedException("Failed to add a new tile to the game"); //Update exception
+        }
+    }
+
+    public void addPlayer(Game game, Player player) {
+        try {
+            game.addPlayer(player);
+            gameRepository.save(game);
+        } catch (Exception e) {
+            throw new GameCreationFailedException("Failed to add a new player to the game"); //Update exception
         }
     }
 

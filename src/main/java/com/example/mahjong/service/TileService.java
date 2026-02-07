@@ -1,6 +1,5 @@
 package com.example.mahjong.service;
 
-import com.example.mahjong.exception.GameCreationFailedException;
 import com.example.mahjong.exception.GetFromDatabaseFailedException;
 import com.example.mahjong.exception.TileCreationFailedException;
 import com.example.mahjong.model.Game;

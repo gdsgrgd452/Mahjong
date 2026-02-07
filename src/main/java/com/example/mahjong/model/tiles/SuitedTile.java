@@ -8,11 +8,9 @@ import jakarta.persistence.Entity;
 @DiscriminatorValue("Suited")
 public class SuitedTile extends Tile  {
     Integer number;
-
     public Integer getNumber() {
         return number;
     }
-
     public void setNumber(Integer number) {
         this.number = number;
     }
