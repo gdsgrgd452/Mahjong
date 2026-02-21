@@ -2,6 +2,8 @@ package com.example.mahjong.model.tiles;
 
 import com.example.mahjong.model.Game;
 import com.example.mahjong.model.Player;
+import com.example.mahjong.model.actions.Chow;
+import com.example.mahjong.model.actions.Pung;
 import jakarta.persistence.*;
 
 @Entity
@@ -25,6 +27,40 @@ public class Tile {
         this.suit = suit;
     }
 
+    boolean justPickedUp;
+    public boolean isJustPickedUp() {
+        return justPickedUp;
+    }
+    public void setJustPickedUp(boolean justPickedUp) {
+        this.justPickedUp = justPickedUp;
+    }
+
+    boolean discarded;
+    public boolean isDiscarded() {
+        return discarded;
+    }
+    public void setDiscarded(boolean discarded) {
+        this.discarded = discarded;
+    }
+
+    boolean justDiscarded;
+    public boolean isJustDiscarded() {
+        return justDiscarded;
+    }
+    public void setJustDiscarded(boolean justDiscarded) {
+        this.justDiscarded = justDiscarded;
+    }
+
+    boolean toBeInNewAction;
+
+    boolean placed;
+    public boolean isPlaced() {
+        return placed;
+    }
+    public void setPlaced(boolean placed) {
+        this.placed = placed;
+    }
+
     @ManyToOne @JoinColumn(name = "game_id")
     private Game game;
     public Game getGame() {
@@ -32,6 +68,24 @@ public class Tile {
     }
     public void setGame(Game game) {
         this.game = game;
+    }
+
+    @ManyToOne @JoinColumn(name = "pung_id")
+    private Pung pung;
+    public Pung getPung() {
+        return pung;
+    }
+    public void setPung(Pung pung) {
+        this.pung = pung;
+    }
+
+    @ManyToOne @JoinColumn(name = "chow_id")
+    private Chow chow;
+    public Chow getChow() {
+        return chow;
+    }
+    public void setChow(Chow chow) {
+        this.chow = chow;
     }
 
     @ManyToOne @JoinColumn(name = "player_id")
