@@ -10,5 +10,9 @@ import java.util.List;
 // This repo works for Suited, FlowerTile and HonorTile
 @Repository
 public interface TileRepository extends JpaRepository<Tile, Integer> {
-    public List<Tile> getAllByGame(Game game);
+    List<Tile> getAllByGame(Game game);
+    List<Tile> findAllByGameAndPlayerIsNull(Game game);
+    List<Tile> findAllByGameAndPlayerIsNullAndDiscarded(Game game, boolean discarded);
+    List<Tile> findAllByGameAndPlayerIsNullAndDiscardedAndJustDiscarded(Game game, boolean discarded, boolean justDiscarded);
+    Tile findFirstByGameAndPlayerIsNullAndDiscardedAndJustDiscarded(Game game, boolean discarded, boolean justDiscarded);
 }
