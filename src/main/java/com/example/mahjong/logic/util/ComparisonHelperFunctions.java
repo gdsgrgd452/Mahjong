@@ -1,6 +1,5 @@
-package com.example.mahjong.logic;
+package com.example.mahjong.logic.util;
 
-import com.example.mahjong.model.Player;
 import com.example.mahjong.model.tiles.FlowerTile;
 import com.example.mahjong.model.tiles.HonorTile;
 import com.example.mahjong.model.tiles.SuitedTile;

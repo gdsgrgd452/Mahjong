@@ -1,10 +1,10 @@
 package com.example.mahjong.controller;
 
 
-import com.example.mahjong.logic.Checks;
+import com.example.mahjong.logic.checks.Checks;
 import com.example.mahjong.logic.Discard;
 import com.example.mahjong.logic.GameStarter;
-import com.example.mahjong.logic.PungsChecks;
+import com.example.mahjong.logic.checks.PungsChecks;
 import com.example.mahjong.model.Game;
 import com.example.mahjong.model.Player;
 import com.example.mahjong.model.tiles.Tile;

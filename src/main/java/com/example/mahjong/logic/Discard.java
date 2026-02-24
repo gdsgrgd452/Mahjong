@@ -1,5 +1,9 @@
 package com.example.mahjong.logic;
 
+import com.example.mahjong.logic.checks.Checks;
+import com.example.mahjong.logic.checks.ChowsChecks;
+import com.example.mahjong.logic.checks.PungsChecks;
+import com.example.mahjong.logic.util.HelperFunctions;
 import com.example.mahjong.model.Game;
 import com.example.mahjong.model.Player;
 import com.example.mahjong.model.actions.Chow;
